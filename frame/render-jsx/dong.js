@@ -13,7 +13,7 @@ const render = (vdom, parent = null) => {
         return mount(document.createTextNode(vdom));
     } else if (isElementVdom(vdom)) {
         const dom = mount(document.createElement(vdom.type));
-        for (const child of vdom.children) {
+        for (const child of [].concat(...vdom.children)) {// children 元素也是 数组，要拍平
             render(child, dom);
         }
         for (const prop in vdom.props) {
@@ -47,3 +47,9 @@ const setAttribute = (dom, key, value) => {
         dom.setAttribute(key, value);
     }
 }
+
+const createElement = (type, props, ...children) => {
+    if (props === null)  props = {};
+    return {type, props, children};
+};
+

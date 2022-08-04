@@ -1,4 +1,4 @@
-
+// vdom
 const vdom = {
     type: 'ul',
     props: {
@@ -14,11 +14,11 @@ const vdom = {
                     color: '#fff'
                 },
                 onClick: function() {
-                    alert(1);
+                    alert("test1");
                 }
             },
             children: [
-                'aaaa'
+                'testitem1'
             ]
         },
         {
@@ -27,7 +27,7 @@ const vdom = {
                 className: 'item'
             },
             children: [
-                'bbbbddd'
+                'testitem2'
             ]
         },
         {
@@ -36,7 +36,7 @@ const vdom = {
                 className: 'item'
             },
             children: [
-                'cccc'
+                'testitem3'
             ]
         }
     ]
